@@ -11,16 +11,20 @@ int main() {
   string message_encode {};
   
   cout << "Please enter the message that you would like to encrypt.";
-
-  cin >> message;
+  getline(cin,message);
 
   int i = 0;
   int message_len = message.length();
-  char found;
-  cout << message_len;
-  while (i<=message_len){
-    found = alphabet.find(message[i]);
-    cout << found;
-    i= i+1;
+  string found;
+
+  for (char letter: message) {
+    size_t found = alphabet.find(letter);
+    if (found != string::npos) {
+      char found_letter {key.at(found)};
+      message_encode += found_letter;
+    } else{
+      message_encode += letter;
+    }
   }
+  cout << message_encode << endl;
 }
