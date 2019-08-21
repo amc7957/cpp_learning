@@ -26,5 +26,18 @@ int main() {
       message_encode += letter;
     }
   }
-  cout << message_encode << endl;
+  cout << "Encrypted message: " << message_encode << endl;
+
+  string undo_encode {};
+
+  for(char letter: message_encode){
+    size_t found = key.find(letter);
+    if (found != string::npos){
+      char found_letter {alphabet.at(found)};
+      undo_encode += found_letter;  
+    } else{
+      undo_encode += letter;
+    }
+  }
+  cout << "Original message: " << undo_encode << endl;
 }
