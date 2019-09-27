@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main() {
+
+  int score{100};
+  int *score_ptr {&score};
+
+  cout << *score_ptr << endl; //100
+
+  *score_ptr = 200;
+
+  cout << *score_ptr << endl; //200
+  cout << score << endl; //200
