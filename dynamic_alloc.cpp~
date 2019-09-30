@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int *int_ptr {nullptr};
+
+  int_ptr = new_int;
+
+  cout << int_ptr << endl;
+
+  
+  cout << endl;
+  return 0;
+}
